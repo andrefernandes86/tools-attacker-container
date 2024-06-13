@@ -31,8 +31,8 @@ RUN git clone https://github.com/commixproject/commix.git /opt/commix
 RUN ln -s /opt/commix/commix.py /usr/local/bin/commix
 
 # Copy the hello.sh script into the container
-COPY hello.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/hello.sh
+COPY hello.sh /home/ubuntu/
+RUN chmod +x /home/ubuntu/hello.sh
 
 # Set the entrypoint to execute hello.sh
-ENTRYPOINT ["/usr/local/bin/hello.sh"]
+ENTRYPOINT ["sh /home/ubuntu/hello.sh"]
