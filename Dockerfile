@@ -16,6 +16,7 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     gnupg2 \
+    git \
     sudo
 
 # Install Metasploit-Framework from Rapid7 repository
