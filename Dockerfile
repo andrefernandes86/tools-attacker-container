@@ -16,11 +16,18 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     gnupg2 \
-    sudo \
+    sudo
 
-# Clean up APT when done to reduce image size
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Install Metasploit-Framework from Rapid7 repository
+RUN apt-get install -y gnupg2
+RUN curl -fsSL https://apt.metasploit.com/metasploit-framework.gpg.key | sudo apt-key add -
+RUN echo 'deb https://apt.metasploit.com/ jessie main' > /etc/apt/sources.list.d/metasploit-framework.list
+RUN apt-get update && \
+    apt-get install -y metasploit-framework
+
+# Install Commix from GitHub repository
+RUN git clone https://github.com/commixproject/commix.git /opt/commix
+RUN ln -s /opt/commix/commix.py /usr/local/bin/commix
 
 # Copy the hello.sh script into the container
 COPY hello.sh /usr/local/bin/
