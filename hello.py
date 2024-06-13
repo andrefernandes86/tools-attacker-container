@@ -1,6 +1,7 @@
 import os
 import threading
 import subprocess
+from msfrpc import MsfRpcClient
 
 def run_metasploit():
     target_ip = input("Enter DVWA target IP: ")
@@ -154,10 +155,6 @@ if __name__ == "__main__":
     main()
 
 def run_windows():
-from msfrpc import MsfRpcClient
-
-# Function to initialize Metasploit RPC client
-def initialize_metasploit():
     try:
         client = MsfRpcClient('127.0.0.1', username='msf', password='msf')  # Replace with your msfrpcd host IP and credentials
         return client
