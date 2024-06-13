@@ -30,9 +30,12 @@ RUN apt-get update && \
 RUN git clone https://github.com/commixproject/commix.git /opt/commix
 RUN ln -s /opt/commix/commix.py /usr/local/bin/commix
 
-# Copy the hello.sh script into the container
-COPY hello.sh /home/ubuntu/
-RUN chmod +x /home/ubuntu/hello.sh
+# Copy the hello.py script into the container
+COPY hello.py /home/ubuntu/
+RUN chmod +x /home/ubuntu/hello.py
 
-# Set the entrypoint to execute hello.sh
-ENTRYPOINT ["/home/ubuntu/hello.sh"]
+# Set the entrypoint to execute hello.py with Python 3
+ENTRYPOINT ["python3", "/home/ubuntu/hello.py"]
+
+# Optionally, add a CMD instruction for default behavior
+CMD ["bash"]
