@@ -22,5 +22,9 @@ RUN apt-get update && \
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Set the entrypoint to bash for interactive use
-ENTRYPOINT ["/bin/bash"]
+# Copy the hello.sh script into the container
+COPY hello.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/hello.sh
+
+# Set the entrypoint to execute hello.sh
+ENTRYPOINT ["/usr/local/bin/hello.sh"]
