@@ -9,14 +9,14 @@ RUN apt-get update && \
     apt-get install -y \
     hydra \
     nmap \
-    metasploit-framework \
     nikto \
     sqlmap \
-    commix \
     curl \
     wget \
     python3 \
-    python3-pip
+    python3-pip \
+    gnupg2 \
+    sudo \
 
 # Clean up APT when done to reduce image size
 RUN apt-get clean && \
