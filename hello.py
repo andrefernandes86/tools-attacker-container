@@ -23,7 +23,7 @@ def run_metasploit():
     run
     exit
     """
-        os.system(f"msfconsole -q -x \"{msf_commands}\"")
+    os.system(f"msfconsole -q -x \"{msf_commands}\"")
 
 def run_nmap():
     print("Nmap Scan Options:")
