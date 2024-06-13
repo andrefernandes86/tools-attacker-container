@@ -1,7 +1,6 @@
 import os
 import threading
 import subprocess
-from msfrpc import MsfRpcClient
 
 def run_metasploit():
     target_ip = input("Enter DVWA target IP: ")
