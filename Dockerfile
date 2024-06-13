@@ -35,4 +35,4 @@ COPY hello.sh /home/ubuntu/
 RUN chmod +x /home/ubuntu/hello.sh
 
 # Set the entrypoint to execute hello.sh
-ENTRYPOINT ["sh /home/ubuntu/hello.sh"]
+ENTRYPOINT ["/home/ubuntu/hello.sh"]
